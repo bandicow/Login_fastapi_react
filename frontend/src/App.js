@@ -3,10 +3,11 @@ import React, { useEffect, useState } from "react";
 import Register from "./components/Register";
 import Header from "./components/Header";
 import Login from "./components/Login";
-import Table from "./components/Table";
+// import Table from "./components/Table";
 
 import { useContext } from "react";
 import { UserContext } from "./context/UserContext";
+import MainPage from "./components/MainPage";
 
 const App = () => {
   const [message, setMessage] = useState("");
@@ -22,7 +23,7 @@ const App = () => {
     const response = await fetch("/api", requestOptions);
     const data = await response.json();
 
-    // console.log(data);
+    // console.log(data); -> 내가 awesome cool 해둔거옴
     if (!response.ok) {
       console.log("somethong messed up");
     } else {
@@ -30,27 +31,26 @@ const App = () => {
     }
   };
 
+  // 아무것도 안하는 함수? 처음에 한번만 실행
   useEffect(() => {
     getWelcomeMessage();
   }, []);
 
   return (
-    <>
+    <div>
       <Header title={message} />
-      <div className="columns">
-        <div className="column"></div>
+      <div>
         <div className="column m-5 is-two_thirds">
           {!token ? (
             <div className="columns">
               <Register /> <Login />
             </div>
           ) : (
-            <Table />
+            <MainPage />
           )}
         </div>
-        <div className="column"></div>
       </div>
-    </>
+    </div>
   );
 };
 

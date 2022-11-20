@@ -38,6 +38,11 @@ async def generate_token(form_data : fastapi.security.OAuth2PasswordRequestForm 
     return await services.create_token(user)
 
 # 부여받은 ID 보여주기 , main page 로 넘어가게,, 아마 다른 페이지 이동할 때도 유사하게 사용 예정
+# user: schemas.User = fastapi.Depends(services.get_current_user) 이부분이 인증요구인듯
 @app.get("/api/users/main", response_model=schemas.User)
 async def get_user(user: schemas.User = fastapi.Depends(services.get_current_user)):
     return user
+
+@app.get("/api")
+async def root():
+    return {"messege":"Awesome~ coooool!"}
