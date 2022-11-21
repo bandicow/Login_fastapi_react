@@ -36,12 +36,12 @@ const Login = () => {
   };
 
   return (
-    <div className="column">
-      <form className="box" onSubmit={handleSubimt}>
-        <h1 className="title has-text-centered">Login</h1>
-        <div className="field">
-          <label className="label">Email Address</label>
-          <div className="control">
+    <div>
+      <form onSubmit={handleSubimt}>
+        <h1>Login</h1>
+        <div>
+          <label>Email Address</label>
+          <div>
             <input
               type="text"
               placeholder="Enter id"

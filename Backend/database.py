@@ -8,7 +8,7 @@ DATABASEURL = "mariadb+pymysql://root:1234@localhost:3306/FEMS"
 
 engine = sqlalchemy.create_engine(DATABASEURL, encoding = "utf-8")
 
-SeeionLocal = sqlalchemy.orm.sessionmaker(autocommit=False, autoflush=False, bind=engine)
+SessionLocal = sqlalchemy.orm.sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
 Base = sqlalchemy.ext.declarative.declarative_base()
 

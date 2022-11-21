@@ -23,7 +23,7 @@ export const UserProvider = (props) => {
 
       const response = await fetch("/api/users/main", requestOptions); // 아까 생성한 토큰 키 있는 아이디 가져오기
 
-      // 처음에는 null값이 들어가있는듯
+      // 처음에는 null값이 들어가있는듯 xx
 
       if (!response.ok) {
         setToken(null);

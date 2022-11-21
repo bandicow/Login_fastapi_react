@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 
-import Register from "./components/Register";
 import Header from "./components/Header";
 import Login from "./components/Login";
 // import Table from "./components/Table";
@@ -43,7 +42,7 @@ const App = () => {
         <div className="column m-5 is-two_thirds">
           {!token ? (
             <div className="columns">
-              <Register /> <Login />
+              <Login />
             </div>
           ) : (
             <MainPage />

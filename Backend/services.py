@@ -32,7 +32,7 @@ JWT_SECRET = "myjwtsecret"
 
 # 데이버 베이스 저장
 def get_db():
-    db = database.SeeionLocal()
+    db = database.SessionLocal()
     try:
         yield db
     finally:
